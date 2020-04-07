@@ -25,10 +25,10 @@ body /shadow-deep/ [touch-action="pan-x pan-y"],body /shadow-deep/ [touch-action
 .card.card_size_s { border-radius: 22px; }
 </style>
 <script>    
-    $(document).ready(function(){
+    /*$(document).ready(function(){
         var carousel = $("#carousel");
         carousel.owlCarousel();
-    });
+    });*/
     document.addEventListener("DOMContentLoaded", function () {
         const buttonsContainer = document.querySelector(".buttons-wrap");
         const fridgeInfoContainer = document.querySelector(".card_size_m:nth-child(8) .card-description");
@@ -265,9 +265,15 @@ body /shadow-deep/ [touch-action="pan-x pan-y"],body /shadow-deep/ [touch-action
             <div class="card card_size_l critical">
                 <div class="card-heading heading-critical">
                     <div class="card-icon-wrap">
-                        <div id="carousel">
-                            <div class="carousel-element">
-                                <img class="card-icon" src="img/cam.svg">
+                        <div id="carousel" class="owl-carousel owl-theme" style="display: block; opacity: 1;">
+                            <div class="owl-wrapper-outer">
+                                <div class="owl-wrapper" style="display: block; width: 18px; left: 0;">
+                                    <div class="owl-item" style="width: 9px;">
+                                        <div class="carousel-element">
+                                            <img class="card-icon" src="img/cam.svg">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
