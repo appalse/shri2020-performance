@@ -21,12 +21,17 @@ body /shadow-deep/ [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action
 body /shadow-deep/ [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
 [touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
 body /shadow-deep/ [touch-action="pan-x pan-y"],body /shadow-deep/ [touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
-
-.card { border-radius: 23px !important;  }
-.card.card_size_s { border-radius: 22px !important; }
-
 </style>
 <script>    
+    document.addEventListener("DOMContentLoaded", function () {
+        $('.card').each(function(e) {
+            if ($(this).hasClass('card_size_s')) {
+                $(this).css({'border-radius': '22px'})
+            } else {
+                $(this).css({'border-radius': '23px'})
+            }
+        });
+    });
     $(document).ready(function(){
         var carousel = $("#carousel");
         carousel.owlCarousel();
